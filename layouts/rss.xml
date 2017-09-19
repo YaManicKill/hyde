@@ -1,0 +1,35 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <title>Rants With Al</title>
+        <link>{{ .Permalink }}</link>
+        <language>en-us</language>
+        <copyright>Copyright 2017 Al McKinlay</copyright>
+        <itunes:subtitle>Where Al Rants About Things</itunes:subtitle>
+        <itunes:author>Al McKinlay</itunes:author>
+        <itunes:summary>A podcast where Al rants about things that annoy him</itunes:summary>
+        <description>A podcast where Al rants about things that annoy him</description>
+        <itunes:owner>
+            <itunes:name>Al McKinlay</itunes:name>
+            <itunes:email>rantswithal@10people.co.uk</itunes:email>
+        </itunes:owner>
+        <itunes:image href="tbd" />
+        <itunes:category text="Technology">
+            <itunes:category text="Software How-To" />
+            <itunes:category text="Tech News" />
+        </itunes:category>
+        {{ range first 50 .Data.Pages }}
+        {{ if eq .Type "episode"}}
+        <item>
+            <title>{{ title .Title }} - Rants With Al{{ .Params.episode }}</title>
+            <itunes:author>Al McKinlay</itunes:author>
+            <itunes:summary><![CDATA[{{ .Description }}]></itunes:summary>
+      <enclosure url="{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/x-m4a" />
+      <guid>{{ .Params.podcast }}</guid>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
+      <itunes:duration>{{ .Params.podcast_duration}}</itunes:duration>
+    </item>
+    {{ end }}
+    {{ end }}
+  </channel>
+</rss>
