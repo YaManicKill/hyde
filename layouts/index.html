@@ -6,6 +6,11 @@
     <a href="{{ .Permalink }}">{{ .Title }}</a>
   </h1>
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+
+  <audio controls>
+    <source src="{{ .Params.podcast }}" type="audio/mpeg" />
+    <a href="{{ .Params.podcast }}">{{ title .Title }}</a>
+  </audio>
   {{ .Content }}
 </div>
 {{- end }}
