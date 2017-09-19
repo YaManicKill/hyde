@@ -1,0 +1,16 @@
+{{ define "main" -}}
+<div class="post">
+  <h1>{{ .Title }}</h1>
+  <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+  <audio controls>
+    <source src="{{ .Params.podcast }}" type="audio/mpeg" />
+    <a href="{{ .Params.podcast }}">{{ title .Title }}</a>
+  </audio>
+  {{ .Content }}
+</div>
+
+{{ if .Site.DisqusShortname -}}
+<h2>Comments</h2>
+{{ template "_internal/disqus.html" . }}
+{{- end }}
+{{- end }}
