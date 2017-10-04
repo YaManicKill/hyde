@@ -1,5 +1,6 @@
 <div class="sidebar">
   <div class="container">
+    <img src="/images/logo.png" />
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
       <p class="lead">
@@ -12,6 +13,7 @@
       {{ range .Site.Menus.main -}}
         <li><a href="{{.URL}}"> {{ .Name }} </a></li>
       {{- end }}
+      <li><a href="/index.xml">RSS Feed</a></li>
     </ul>
 
     <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}. All rights reserved. {{end}}</p>

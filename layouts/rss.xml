@@ -1,4 +1,4 @@
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Rants With Al</title>
         <link>{{ .Permalink }}</link>
@@ -12,17 +12,23 @@
             <itunes:name>Al McKinlay</itunes:name>
             <itunes:email>rantswithal@10people.co.uk</itunes:email>
         </itunes:owner>
-        <itunes:image href="tbd" />
+        <itunes:image href="https://www.rantswithal.com/images/icon.png" />
         <itunes:category text="Technology">
             <itunes:category text="Software How-To" />
             <itunes:category text="Tech News" />
         </itunes:category>
+        <image>
+            <url>https://www.rantswithal.com/images/icon.png</url>
+            <title>Rants With Al</title>
+            <link>https://www.rantswithal.com/</link>
+        </image>
+        <atom:link href="https://www.rantsiwthal.com/index.xml" rel="self" type="application/rss+xml" />
         {{ range first 50 .Data.Pages }}
         {{ if eq .Type "episode"}}
         <item>
-            <title>{{ title .Title }} - Rants With Al{{ .Params.episode }}</title>
+            <title>{{ title .Title }} - Rants{{ .Params.episode }}</title>
             <itunes:author>Al McKinlay</itunes:author>
-            <itunes:summary><![CDATA[{{ .Description }}]></itunes:summary>
+            <itunes:summary><{{ .Description }}></itunes:summary>
             <enclosure url="{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/x-m4a" />
             <guid>{{ .Params.podcast }}</guid>
             <link>{{ .Permalink }}</link>
