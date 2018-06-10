@@ -27,7 +27,7 @@
             <title>{{ .Params.episode }} - {{ title .Title }}</title>
             <itunes:author>Al McKinlay</itunes:author>
             <itunes:summary>{{ .Description }}</itunes:summary>
-            <enclosure url="{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/x-m4a" />
+            <enclosure url="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/x-m4a" />
             <guid>{{ .Params.podcast }}</guid>
             <link>{{ .Permalink }}</link>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
