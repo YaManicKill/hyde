@@ -5,8 +5,8 @@
     <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
 
     <audio controls>
-      <source src="{{ .Params.podcast }}" type="audio/mpeg" />
-      <a href="{{ .Params.podcast }}">{{ title .Title }}</a>
+      <source src="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" type="audio/mpeg" />
+      <a href="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">{{ title .Title }}</a>
     </audio>
   </li>
 {{- end }}
