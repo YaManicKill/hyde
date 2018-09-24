@@ -1,26 +1,26 @@
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Rants With Al</title>
+        <title>{{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
         <language>en-us</language>
         <copyright>Copyright 2017 Al McKinlay</copyright>
-        <itunes:subtitle>Where Al Rants About Things</itunes:subtitle>
+        <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
         <itunes:author>Al McKinlay</itunes:author>
-        <itunes:summary>A podcast where Al rants about things that annoy him</itunes:summary>
-        <description>A podcast where Al rants about things that annoy him</description>
+        <itunes:summary>{{ .Site.Params.description }}</itunes:summary>
+        <description>{{ .Site.Params.description }}</description>
         <itunes:owner>
             <itunes:name>Al McKinlay</itunes:name>
             <itunes:email>rantswithal@10people.co.uk</itunes:email>
         </itunes:owner>
-        <itunes:image href="https://www.rantswithal.com/images/icon.png" />
+        <itunes:image href="{{ .Site.BaseURL }}images/icon.png" />
         <itunes:category text="Technology">
         </itunes:category>
         <image>
-            <url>https://www.rantswithal.com/images/icon.png</url>
-            <title>Rants With Al</title>
-            <link>https://www.rantswithal.com/</link>
+            <url>{{ .Site.BaseURL }}images/icon.png</url>
+            <title>{{ .Site.Title }}</title>
+            <link>{{ .Site.BaseURL }}</link>
         </image>
-        <atom:link href="https://www.rantsiwthal.com/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml" />
         {{ range first 50 .Data.Pages }}
         {{ if eq .Type "episode"}}
         <item>
