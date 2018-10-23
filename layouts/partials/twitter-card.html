@@ -1,0 +1,16 @@
+<meta name="twitter:site" content="{{ .Site.Title }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}images/logo.png">
+{{ with .Site.Params.creator -}}<meta name="twitter:creator" content="@{{- . -}}">{{- end }}
+
+{{- if isset .Params "podcast" }}
+<meta name="twitter:description" content="{{ .Params.Description }}">
+<meta name="twitter:title" content="{{ .Params.title }}">
+<meta name="twitter:card" content="player">
+<meta name="twitter:player" content="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">
+<meta name="twitter:player:stream:content_type" content="audio/mpeg">
+<meta name="twitter:player:width" content="400">
+<meta name="twitter:player:height" content="100">
+{{- else }}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Site.Title }}">
+{{- end }}
