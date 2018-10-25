@@ -1,0 +1,25 @@
+{{ define "main" -}}
+
+<form method="post" action="{{ .Site.BaseURL }}contact.php">
+    <label>Your e-mail</label>
+    <br />
+    <input type="text" name="form-email">
+    <br />
+    <label>Your name</label>
+    <br />
+    <input type="text" name="form-name">
+  
+    <br />
+    <label>Subject</label>
+    <br />
+    <input type="text" name="form-subject">
+  
+    <br />
+    <label>Message</label>
+    <br />
+    <textarea name="form-message"></textarea>
+    <br />
+    <button type="submit" class="btn btn-default">Send Email</button>
+</form>
+
+{{- end }}
