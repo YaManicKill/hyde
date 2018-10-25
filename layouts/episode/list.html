@@ -1,6 +1,6 @@
 {{ define "main" -}}
 <ul class="posts">
-{{ range .Data.Pages -}}
+{{ range where .Pages "Type" "=" "episode" -}}
   <li>
     <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
 
