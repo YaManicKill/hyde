@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($name && $email && $emailIsValid && $subject && $message) {
         $mail = new Mail();
-        $mail->setTo('harvestseason@10people.co.uk');
+        $mail->setTo('contact@harvestseason.club');
         $mail->setFrom('contact@harvestseason.club');
         $mail->setSender($name);
         $mail->setSenderEmail($email);
