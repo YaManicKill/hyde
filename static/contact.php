@@ -106,8 +106,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </html>";
         $mail->setHtml($body);
         $success = $mail->send();
+        if ("$success" == "1") {
+            header( 'Location: /thanks' );
+        } else {
+            header( 'Location: /error' );
+        }
         $emailSent = true;
-        header( 'Location: /thanks' );
     } else {
         $hasError = true;
     }
