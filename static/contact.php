@@ -14,7 +14,21 @@
                 'Reply-To: ' . $email . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
-        $success = mail($to, $subject, $message, $headers);
+        $body = "
+        <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transit$
+        <html>
+            <head>
+                <meta charset=\"utf-8\">
+            </head>
+            <body>
+                <h1>{$subject}</h1>
+                <p><strong>Name:</strong> {$name}</p>
+                <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Message:</strong> {$message}</p>
+            </body>
+        </html>";
+
+        $success = mail($to, $subject, $body, $headers);
         if ("$success" == "1") {
             header( 'Location: /thanks' );
         } else {
