@@ -173,6 +173,29 @@ a.sidebar-nav-item:focus {
 }
 
 
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact textarea {
+  height: 10rem;
+}
+
+.contact button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 /*
  * Themes
@@ -192,6 +215,10 @@ a.sidebar-nav-item:focus {
   color: #ac4142;
 }
 
+.theme-base-08 .contact button {
+  background-color: #ac4142;
+}
+
 /* Orange */
 .theme-base-09 .sidebar {
   background-color: #d28445;
@@ -199,6 +226,10 @@ a.sidebar-nav-item:focus {
 .theme-base-09 .content a,
 .theme-base-09 .related-posts li a:hover {
   color: #d28445;
+}
+
+.theme-base-09 .contact button {
+  background-color: #d28445;
 }
 
 /* Yellow */
@@ -210,6 +241,10 @@ a.sidebar-nav-item:focus {
   color: #f4bf75;
 }
 
+.theme-base-0a .contact button {
+  background-color: #f4bf75;
+}
+
 /* Green */
 .theme-base-0b .sidebar {
   background-color: #90a959;
@@ -217,6 +252,10 @@ a.sidebar-nav-item:focus {
 .theme-base-0b .content a,
 .theme-base-0b .related-posts li a:hover {
   color: #90a959;
+}
+
+.theme-base-0b .contact button {
+  background-color: #90a959;
 }
 
 /* Cyan */
@@ -228,6 +267,10 @@ a.sidebar-nav-item:focus {
   color: #75b5aa;
 }
 
+.theme-base-0c .contact button {
+  background-color: #75b5aa;
+}
+
 /* Blue */
 .theme-base-0d .sidebar {
   background-color: #6a9fb5;
@@ -235,6 +278,10 @@ a.sidebar-nav-item:focus {
 .theme-base-0d .content a,
 .theme-base-0d .related-posts li a:hover {
   color: #6a9fb5;
+}
+
+.theme-base-0d .contact button {
+  background-color: #6a9fb5;
 }
 
 /* Magenta */
@@ -246,6 +293,10 @@ a.sidebar-nav-item:focus {
   color: #aa759f;
 }
 
+.theme-base-0e .contact button {
+  background-color: #aa759f;
+}
+
 /* Brown */
 .theme-base-0f .sidebar {
   background-color: #8f5536;
@@ -253,4 +304,12 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+.theme-base-0f .contact button {
+  background-color: #8f5536;
+}
+
+.theme-base-0f .contact button:hover {
+  background-color: #8a4835;
 }
