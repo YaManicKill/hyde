@@ -12,7 +12,7 @@
         $to      = '';
         $headers = 'From: Harvest Season Podcast <contact@harvestseason.club>' . "\r\n" .
                 "Content-Type: text/html; charset=ISO-8859-1\r\n" .
-                'Bcc: harvestseason@10people.co.uk' . "\r\n" .
+                'Bcc: harvestseason@10people.co.uk,raschelle.dellaney@gmail.com' . "\r\n" .
                 'Reply-To: ' . $name . '<' . $email . '>' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
