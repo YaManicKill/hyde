@@ -9,9 +9,11 @@
     }
     $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($name && $email && $emailIsValid && $subject && $message) {
-        $to      = 'harvestseason@10people.co.uk,raschelle.dellaney@gmail.com';
-        $headers = 'From: contact@harvestseason.club' . "\r\n" .
-                'Reply-To: ' . $email . "\r\n" .
+        $to      = '';
+        $headers = 'From: Harvest Season Podcast <contact@harvestseason.club>' . "\r\n" .
+                "Content-Type: text/html; charset=ISO-8859-1\r\n" .
+                'Bcc: harvestseason@10people.co.uk' . "\r\n" .
+                'Reply-To: ' . $name . '<' . $email . '>' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
         $body = "
