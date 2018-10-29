@@ -1,19 +1,40 @@
 <?php
+    $myfile = fopen(__DIR__.'/../../../config.toml', "r") or die("Unable to open file!");
+    // Things to get out of config
+    $fromEmail = "";
+    $fromName = "";
+    $toEmails = "";
+
+    while(!feof($myfile)) {
+        $line = fgets($myfile);
+        if(strpos($line, 'toEmails') !== FALSE) {
+            $toEmails = str_replace("\n", "", str_replace("\"", "", explode(' = ',$line)[1]));
+        }
+        if(strpos($line, 'fromEmail') !== FALSE) {
+            $fromEmail = str_replace("\n", "", str_replace("\"", "", explode(' = ',$line)[1]));
+        }
+        if(strpos($line, 'fromName') !== FALSE) {
+            $fromName = str_replace("\n", "", str_replace("\"", "", explode(' = ',$line)[1]));
+        }
+    }
+    fclose($myfile);
+
     $name    = stripslashes(trim($_POST['form-name']));
     $email   = stripslashes(trim($_POST['form-email']));
     $subject = stripslashes(trim($_POST['form-subject']));
     $message = stripslashes(trim($_POST['form-message']));
     $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
+
     if (preg_match($pattern, $name) || preg_match($pattern, $email) || preg_match($pattern, $subject)) {
         die("Header injection detected");
     }
     $emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
     if ($name && $email && $emailIsValid && $subject && $message) {
         $to      = '';
-        $headers = 'From: Harvest Season Podcast <contact@harvestseason.club>' . "\r\n" .
+        $headers = "From: $fromName <$fromEmail>\r\n" .
                 "Content-Type: text/html; charset=ISO-8859-1\r\n" .
-                'Bcc: harvestseason@10people.co.uk,raschelle.dellaney@gmail.com' . "\r\n" .
-                'Reply-To: ' . $name . '<' . $email . '>' . "\r\n" .
+                "Bcc: $toEmails\r\n" .
+                "Reply-To: $name <$email>\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
         $body = "
