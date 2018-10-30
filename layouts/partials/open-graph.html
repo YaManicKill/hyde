@@ -1,0 +1,13 @@
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ .Site.BaseURL }}images/logo.png" />
+
+{{- if isset .Params "podcast" }}
+<meta property="og:type" content="music.song" /> <!-- I don't want anyone to ever ask me why this is what it is. Apparently og only has "video" and "music", there is no "audio", despite the tag below being og:audio -->
+<meta property="og:audio" content="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" />
+<meta property="og:audio:type" content="audio/mp3"> 
+<meta property="og:description" content="{{ .Params.Description }}" />
+<meta property="og:title" content="{{ .Params.title }}" />
+{{- else }}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Site.Title }}" />
+{{- end }}
