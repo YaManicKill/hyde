@@ -12,11 +12,11 @@
             <itunes:name>Al McKinlay</itunes:name>
             <itunes:email>rantswithal@10people.co.uk</itunes:email>
         </itunes:owner>
-        <itunes:image href="{{ .Site.BaseURL }}images/icon.png" />
+        <itunes:image href="{{ .Site.BaseURL }}images/logo.png" />
         <itunes:category text="Technology">
         </itunes:category>
         <image>
-            <url>{{ .Site.BaseURL }}images/icon.png</url>
+            <url>{{ .Site.BaseURL }}images/logo.png</url>
             <title>{{ .Site.Title }}</title>
             <link>{{ .Site.BaseURL }}</link>
         </image>
