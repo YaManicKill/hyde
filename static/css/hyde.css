@@ -302,19 +302,35 @@ a.sidebar-nav-item:focus {
   background-color: #aa759f;
 }
 
-/* Brown */
+/* Brown (ish) */
 .theme-base-0f .sidebar {
-  background-color: #8f5536;
+  background-color: #FDCE66;
 }
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
-  color: #8f5536;
+  color: #FDCE66;
 }
 
 .theme-base-0f .contact button {
-  background-color: #8f5536;
+  background-color: #FDCE66;
 }
 
 .theme-base-0f .contact button:hover {
-  background-color: #8a4835;
+  background-color: #FDCE66;
+}
+
+.theme-base-0f .sidebar {
+  color: rgba(0,0,0,.5);
+}
+
+.theme-base-0f .sidebar a {
+  color: #000;
+}
+
+.theme-base-0f .sidebar-about h1 {
+  color: #000;
+}
+
+.theme-base-0f .contact button {
+  color: #000;
 }
