@@ -13,6 +13,7 @@
   {{- else -}}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{- end }}
+  <meta name="description" content="{{ .Site.Params.Description }}" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">

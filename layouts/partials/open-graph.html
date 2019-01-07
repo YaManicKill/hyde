@@ -1,5 +1,6 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:image" content="{{ .Site.BaseURL }}images/logo.png" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
 
 {{- if isset .Params "podcast" }}
 <meta property="og:type" content="music.song" /> <!-- I don't want anyone to ever ask me why this is what it is. Apparently og only has "video" and "music", there is no "audio", despite the tag below being og:audio -->
@@ -10,4 +11,5 @@
 {{- else }}
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ .Site.Title }}" />
+<meta property="og:description" content="{{ .Site.Params.Description }}" />
 {{- end }}
