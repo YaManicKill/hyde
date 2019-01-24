@@ -3,13 +3,13 @@
         <title>{{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
         <language>en-us</language>
-        <copyright>Copyright 2017 {{ .Site.Params.creator }}</copyright>
+        <copyright>Copyright 2017 {{ .Site.Params.author }}</copyright>
         <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
-        <itunes:author>{{ .Site.Params.creator }}</itunes:author>
+        <itunes:author>{{ .Site.Params.author }}</itunes:author>
         <itunes:summary>{{ .Site.Params.description }}</itunes:summary>
         <description>{{ .Site.Params.description }}</description>
         <itunes:owner>
-            <itunes:name>{{ .Site.Params.creator }}</itunes:name>
+            <itunes:name>{{ .Site.Params.author }}</itunes:name>
             <itunes:email>rantswithal@10people.co.uk</itunes:email>
         </itunes:owner>
         <itunes:image href="{{ .Site.BaseURL }}images/logo.png" />
@@ -26,7 +26,7 @@
         {{ if eq .Type "episode"}}
         <item>
             <title>{{ .Params.episode }} - {{ title .Title }}</title>
-            <itunes:author>{{ .Site.Params.creator }}</itunes:author>
+            <itunes:author>{{ .Site.Params.author }}</itunes:author>
             <description>{{ .Description }} {{ replace .Content "'" "&#39;" }}</description>
             <itunes:summary>{{ .Description }} {{ replace .Content "'" "&#39;" }}</itunes:summary>
             <enclosure url="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/x-m4a" />

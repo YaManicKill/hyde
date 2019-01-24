@@ -1,6 +1,6 @@
 <meta name="twitter:site" content="{{ .Site.Title }}">
 <meta name="twitter:image" content="{{ .Site.BaseURL }}images/logo.png">
-{{ with .Site.Params.creator -}}<meta name="twitter:creator" content="@{{- . -}}">{{- end }}
+{{ with .Site.Params.author -}}<meta name="twitter:creator" content="@{{- . -}}">{{- end }}
 
 {{- if isset .Params "podcast" }}
 <meta name="twitter:description" content="{{ .Params.Description }}">
