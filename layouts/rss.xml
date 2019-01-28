@@ -18,6 +18,9 @@
         {{ else }}
         <itunes:category text="Technology">
         {{ end }}
+            {{ if isset .Site.Params "subcategory"}}
+            <itunes:category text="Video Games"/>
+            {{ end }}
         </itunes:category>
         <itunes:explicit>No</itunes:explicit>
         <image>
