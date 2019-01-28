@@ -3,7 +3,11 @@
         <title>{{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
         <language>en-us</language>
+        {{ if isset .Site.Params "year"}}
+        <copyright>Copyright {{ .Site.Params.year }} {{ .Site.Params.author }}</copyright>
+        {{ else }}
         <copyright>Copyright 2017 {{ .Site.Params.author }}</copyright>
+        {{ end }}
         <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
         <itunes:author>{{ .Site.Params.author }}</itunes:author>
         <itunes:summary>{{ .Site.Params.description }}</itunes:summary>
