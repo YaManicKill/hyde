@@ -13,7 +13,11 @@
             <itunes:email>rantswithal@10people.co.uk</itunes:email>
         </itunes:owner>
         <itunes:image href="{{ .Site.BaseURL }}images/logo.png" />
+        {{ if isset .Site.Params "category"}}
+        <itunes:category text="{{ .Site.Params.category }}">
+        {{ else }}
         <itunes:category text="Technology">
+        {{ end }}
         </itunes:category>
         <itunes:explicit>No</itunes:explicit>
         <image>
