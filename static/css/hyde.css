@@ -334,3 +334,22 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .contact button {
   color: #000;
 }
+
+
+/* Podcast icons */
+
+.feed-icons {
+  float: left;
+  width: 100%;
+}
+ 
+.podcast-icon {
+  float: left;
+  width: 5rem;
+  margin: 10px;
+}
+
+.podcast-icon.overcast { 
+  width: 6.5rem;
+  margin: -5px -5px 10px -5px;
+}
