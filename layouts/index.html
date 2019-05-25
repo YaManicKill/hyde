@@ -7,7 +7,7 @@
   </h1>
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
 
-  <audio controls>
+  <audio controls preload="metadata">
     <source src="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" type="audio/mpeg" />
     <a href="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">{{ title .Title }}</a>
   </audio>
