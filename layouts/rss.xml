@@ -33,7 +33,7 @@
             <link>{{ .Site.BaseURL }}</link>
         </image>
         <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml" />
-        {{ range first 50 .Data.Pages }}
+        {{ range first 50 .Site.RegularPages }}
         {{ if eq .Type "episode"}}
         <item>
             <title>{{ .Params.episode }} - {{ title .Title }}</title>

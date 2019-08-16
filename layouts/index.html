@@ -1,6 +1,6 @@
 {{ define "main" -}}
 <div class="posts">
-{{ range where .Pages "Type" "=" "episode" -}}
+{{ range where .Site.RegularPages "Type" "=" "episode" -}}
 <div class="post">
   <h1 class="post-title">
     <a href="{{ .Permalink }}">{{ .Params.episode }} - {{ .Title }}</a>
