@@ -38,8 +38,12 @@
         {{ if eq .Type "episode"}}
         <item>
             <title>{{ title .Title }}</title>
-            <itunes:episode>{{ .Params.season }} {{ .Params.episode }}</itunes:episode>
+            <itunes:episode>{{ .Params.episode }}</itunes:episode>
+            {{ if (isset .Params "season")}}
+            <itunes:season>{{ .Params.season }}</itunes:season>
+            {{ else }}
             <itunes:season>1</itunes:season>
+            {{ end }}
 
             {{ if (isset .Params "episode_type")}}
             <itunes:episodeType>{{ .Params.episode_type }}</itunes:episodeType>

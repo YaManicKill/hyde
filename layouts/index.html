@@ -6,7 +6,7 @@
     <a href="{{ .Permalink }}">{{ .Title }}</a>
   </h1>
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-  <span class="post-date">{{ .Params.season }} {{ .Params.episode }}</span>
+  <span class="post-date">Year {{ .Params.year }}, {{ .Params.seasonName }} {{ .Params.episode }}</span>
 
   <audio controls preload="metadata">
     <source src="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" type="audio/mpeg" />
