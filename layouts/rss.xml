@@ -43,8 +43,8 @@
             <itunes:season>{{ .Params.season }}</itunes:season>
             {{ end }}
 
-            {{ if isset .Params "type"}}
-            <itunes:episodeType>{{ .Params.type }}</itunes:episodeType>
+            {{ if isset .Params "episodeType"}}
+            <itunes:episodeType>{{ .Params.episodeType }}</itunes:episodeType>
             {{ else }}
             <itunes:episodeType>full</itunes:episodeType>
             {{ end }}
