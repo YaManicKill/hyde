@@ -11,7 +11,7 @@
   {{ if .IsHome -}}
   <title>{{ .Site.Title }}</title>
   {{- else if isset .Params "podcast" -}}
-  <title>{{.Params.episode}} - {{ .Title }} &middot; {{ .Site.Title }}</title>
+  <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{- else -}}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{- end }}
