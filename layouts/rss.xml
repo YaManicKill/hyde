@@ -11,6 +11,7 @@
         <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
         <itunes:author>{{ .Site.Params.author }}</itunes:author>
         <itunes:summary>{{ .Site.Params.description }}</itunes:summary>
+        <itunes:type>episodic</itunes:type>
         <description>{{ .Site.Params.description }}</description>
         <itunes:owner>
             <itunes:name>{{ .Site.Params.author }}</itunes:name>
@@ -36,7 +37,18 @@
         {{ range first 50 .Site.RegularPages }}
         {{ if eq .Type "episode"}}
         <item>
-            <title>{{ .Params.episode }} - {{ title .Title }}</title>
+            <title>{{ title .Title }}</title>
+            <itunes:episode>{{ .Params.episode }}</itunes:episode>
+            {{ if isset .Params "season"}}
+            <itunes:season>{{ .Params.season }}</itunes:season>
+            {{ end }}
+
+            {{ if isset .Params "type"}}
+            <itunes:episodeType>{{ .Params.type }}</itunes:episodeType>
+            {{ else }}
+            <itunes:episodeType>full</itunes:episodeType>
+            {{ end }}
+            
             <itunes:author>{{ .Site.Params.author }}</itunes:author>
             <description>{{ .Description }} {{ replace .Content "'" "&#39;" }}</description>
             <itunes:summary>{{ .Description }}</itunes:summary>
