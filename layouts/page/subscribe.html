@@ -1,15 +1,23 @@
 {{ define "main" -}}
 
 {{ .Content }}
-To subscribe to our podcast, use the links below.
+To subscribe to the podcast, use the links below.
 
 <div class="feed-icons">
-<a href="https://itunes.apple.com/podcast/the-harvest-season/id1449112246?mt=2"><img src="/images/icons/itunes.png" class="podcast-icon" /></a>
-<a href="https://pca.st/z5HX"><img src="/images/icons/pocketcasts.svg" class="podcast-icon" /></a>
-<a href="https://overcast.fm/itunes1449112246"><img src="/images/icons/overcast.svg" class="podcast-icon overcast" /></a>
-<a href="https://open.spotify.com/show/1T6fbWhiBgH2Ym85KloVEs"><img src="/images/icons/spotify.png" class="podcast-icon" /></a>
+    {{ if isset .Site.Params "itunes"}}
+    <a href="{{ .Site.Params.itunes }}"><img src="/images/icons/itunes.png" class="podcast-icon" /></a>
+    {{ end }}
+    {{ if isset .Site.Params "pocketcasts"}}
+    <a href="{{ .Site.Params.pocketcasts }}"><img src="/images/icons/pocketcasts.svg" class="podcast-icon" /></a>
+    {{ end }}
+    {{ if isset .Site.Params "overcast"}}
+    <a href="{{ .Site.Params.overcast }}"><img src="/images/icons/itunes.png" class="podcast-icon" /></a>
+    {{ end }}
+    {{ if isset .Site.Params "spotify"}}
+    <a href="{{ .Site.Params.spotify }}"><img src="/images/icons/spotify.png" class="podcast-icon" /></a>
+    {{ end }}
 
-<a href="https://www.harvestseason.club/index.xml"><img src="/images/icons/rss.png" class="podcast-icon" /></a>
+    <a href="/index.xml"><img src="/images/icons/rss.png" class="podcast-icon" /></a>
 </div>
 
 {{- end }}
