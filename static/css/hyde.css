@@ -344,6 +344,6 @@ a.sidebar-nav-item:focus {
 }
 
 .podcast-icon.overcast {
-  width: 6.5rem;
-  margin: -5px -5px 10px -5px;
+  width: 6rem;
+  margin: 0;
 }
