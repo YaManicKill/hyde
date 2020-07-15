@@ -1,23 +1,32 @@
-{{ define "main" -}}
-
-{{ .Content }}
-To subscribe to the podcast, use the links below.
+{{ define "main" -}} {{ .Content }} To subscribe to the podcast, use the links
+below.
 
 <div class="feed-icons">
-    {{ if isset .Site.Params "itunes"}}
-    <a href="{{ .Site.Params.itunes }}"><img src="/images/icons/itunes.png" class="podcast-icon" /></a>
-    {{ end }}
-    {{ if isset .Site.Params "pocketcasts"}}
-    <a href="{{ .Site.Params.pocketcasts }}"><img src="/images/icons/pocketcasts.svg" class="podcast-icon" /></a>
-    {{ end }}
-    {{ if isset .Site.Params "overcast"}}
-    <a href="{{ .Site.Params.overcast }}"><img src="/images/icons/overcast.svg" class="podcast-icon" /></a>
-    {{ end }}
-    {{ if isset .Site.Params "spotify"}}
-    <a href="{{ .Site.Params.spotify }}"><img src="/images/icons/spotify.png" class="podcast-icon" /></a>
-    {{ end }}
+  {{ if isset .Site.Params "itunes"}}
+  <a href="{{ .Site.Params.itunes }}"
+    ><img src="/images/icons/itunes.png" class="podcast-icon"
+  /></a>
+  {{ end }} {{ if isset .Site.Params "pocketcasts"}}
+  <a href="{{ .Site.Params.pocketcasts }}"
+    ><img src="/images/icons/pocketcasts.svg" class="podcast-icon"
+  /></a>
+  {{ end }} {{ if isset .Site.Params "overcast"}}
+  <a href="{{ .Site.Params.overcast }}"
+    ><img src="/images/icons/overcast.svg" class="podcast-icon"
+  /></a>
+  {{ end }} {{ if isset .Site.Params "spotify"}}
+  <a href="{{ .Site.Params.spotify }}"
+    ><img src="/images/icons/spotify.png" class="podcast-icon"
+  /></a>
+  {{ end }} {{ if isset .Site.Params "youtube"}}
+  <a href="{{ .Site.Params.youtube }}"
+    ><img src="/images/icons/youtube.png" class="podcast-icon youtube"
+  /></a>
+  {{ end }}
 
-    <a href="/index.xml"><img src="/images/icons/rss.png" class="podcast-icon" /></a>
+  <a href="/index.xml"
+    ><img src="/images/icons/rss.png" class="podcast-icon"
+  /></a>
 </div>
 
 {{- end }}
