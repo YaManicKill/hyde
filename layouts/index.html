@@ -1,6 +1,10 @@
 {{ define "main" -}}
 <div class="posts">
-{{ range where .Site.RegularPages "Type" "=" "episode" -}}
+  
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "=" "episode") 26 }}
+{{ with $paginator }}
+{{ range .Pages }}
+
 <div class="post">
   <h1 class="post-title">
     <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -17,5 +21,7 @@
   </p>
   </div>
 {{- end }}
+{{- end }}
+{{ template "_internal/pagination.html" . }}
 </div>
 {{- end }}
