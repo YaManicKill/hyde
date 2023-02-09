@@ -15,7 +15,7 @@
         <description>{{ .Site.Params.description }}</description>
         <itunes:owner>
             <itunes:name>{{ .Site.Params.author }}</itunes:name>
-            <itunes:email>rantswithal@10people.co.uk</itunes:email>
+            <itunes:email>{{ .Site.Params.email }}</itunes:email>
         </itunes:owner>
         <itunes:image href="{{ .Site.BaseURL }}images/logo.png" />
         {{ if isset .Site.Params "category"}}
