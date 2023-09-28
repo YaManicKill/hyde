@@ -4,8 +4,8 @@
   <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
   <span class="post-date">{{ if isset .Params "year"}}Year {{ .Params.year }}, {{end}}{{ if isset .Params "seasonname"}}{{ .Params.seasonname }}{{ else }}Episode{{ end }} {{ .Params.episode }}</span>
   <audio controls preload="metadata">
-    <source src="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" type="audio/mpeg" />
-    <a href="https://dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">{{ title .Title }}</a>
+    <source src="https://r.zencastr.com/r/dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" type="audio/mpeg" />
+    <a href="https://r.zencastr.com/r/dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">{{ title .Title }}</a>
   </audio>
 
   <p>
