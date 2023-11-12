@@ -45,7 +45,7 @@ html {
     font-size: 18px;
   }
   img {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
@@ -81,7 +81,7 @@ html {
 /* About section */
 .sidebar-about h1 {
   color: #fff;
-  margin-top: 0;
+  margin-top: 1rem;
   font-family: "Abril Fatface", serif;
   font-size: 2.5rem;
   text-align: center;
@@ -205,6 +205,17 @@ a.sidebar-nav-item:focus {
   */
 
 /* Base16 (http://chriskempson.github.io/base16/#default) */
+
+/* TDG */
+
+.theme-base-06 {
+  background-color: #ede4c5;
+}
+
+.theme-base-06 .logo {
+  padding: 10px;
+  background-color: #e9d694;
+}
 
 /* Red */
 .theme-base-08 .sidebar {
@@ -392,7 +403,8 @@ a.sidebar-nav-item:focus {
 .page-item.disabled a {
   color: black;
 }
-.page-item.disabled:hover, .page-item.disabled a:hover {
+.page-item.disabled:hover,
+.page-item.disabled a:hover {
   text-decoration: none;
 }
 
