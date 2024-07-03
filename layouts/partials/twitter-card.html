@@ -4,7 +4,7 @@
 
 {{- if isset .Params "podcast" }}
 <meta name="twitter:description" content="{{ .Params.Description }}">
-<meta name="twitter:title" content="{{.Params.seasonName}} {{.Params.episode}} - {{ .Params.title }}">
+<meta name="twitter:title" content="Year {{.Params.year}}, {{.Params.seasonName}} {{.Params.episode}} - {{ .Params.title }}">
 <meta name="twitter:card" content="player">
 <meta name="twitter:player" content="https://r.zencastr.com/r/dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}">
 <meta name="twitter:player:stream:content_type" content="audio/mpeg">
