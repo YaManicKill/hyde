@@ -1,4 +1,6 @@
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss version="2.0"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
+    xmlns:atom="http://www.w3.org/2005/Atom" >
     <channel>
         <title>{{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
@@ -27,7 +29,7 @@
             <itunes:category text="{{ .Site.Params.subcategory }}"/>
             {{ end }}
         </itunes:category>
-        <itunes:explicit>No</itunes:explicit>
+        <itunes:explicit>false</itunes:explicit>
         <image>
             <url>{{ .Site.BaseURL }}images/logo.png</url>
             <title>{{ .Site.Title }}</title>
@@ -52,8 +54,8 @@
             {{ end }}
             
             <itunes:author>{{ .Site.Params.author }}</itunes:author>
-            <description>{{ .Description }} {{ replace .Content "'" "&#39;" }}</description>
-            <itunes:summary>{{ .Description }}</itunes:summary>
+            <description>{{ .Params.Description }} {{ replace .Content "'" "&#39;" | replaceRE `(?s:<h1 id="transcript">Transcript</h1>.*)` "" }}</description>
+            <itunes:summary>{{ .Params.Description }}</itunes:summary>
             <enclosure url="https://r.zencastr.com/r/dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/mpeg" />
             <guid isPermaLink="false">{{ .Params.guid }}</guid>
             <link>{{ .Permalink }}</link>
