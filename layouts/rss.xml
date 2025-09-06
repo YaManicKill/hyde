@@ -1,6 +1,6 @@
 <rss version="2.0"
-    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
-    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+    xmlns:atom="http://www.w3.org/2005/Atom" 
     xmlns:podcast="https://podcastindex.org/namespace/1.0" >
     <channel>
         <title>{{ .Site.Title }}</title>
@@ -37,14 +37,18 @@
             <title>{{ .Site.Title }}</title>
             <link>{{ .Site.BaseURL }}</link>
         </image>
+        <podcast:funding url="https://patreon.com/thspod">Become a patron!</podcast:funding>
         <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml" />
         {{ range .Site.RegularPages }}
         {{ if eq .Type "episode"}}
         <item>
             <title>{{ title .Title }}</title>
             <itunes:title>{{ title .Title }}</itunes:title>
+            <podcast:episode display="{{ .Params.seasonName }} {{ .Params.episode }}">{{ .Params.episode }}</podcast:episode>
             <itunes:episode>{{ .Params.episode }}</itunes:episode>
+            
             {{ if (isset .Params "season")}}
+            <podcast:season name="{{ .Params.seasonName }}, Year {{ .Params.year }}">{{ .Params.season }}</podcast:season>
             <itunes:season>{{ .Params.season }}</itunes:season>
             {{ else }}
             <itunes:season>1</itunes:season>
