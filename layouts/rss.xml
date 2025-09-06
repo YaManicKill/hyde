@@ -1,6 +1,7 @@
 <rss version="2.0"
     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
-    xmlns:atom="http://www.w3.org/2005/Atom" >
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:podcast="https://podcastindex.org/namespace/1.0" >
     <channel>
         <title>{{ .Site.Title }}</title>
         <itunes:title>{{ .Site.Title }}</itunes:title>
@@ -63,6 +64,12 @@
             <link>{{ .Permalink }}</link>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
             <itunes:duration>{{ .Params.podcast_duration}}</itunes:duration>
+
+
+            {{ if (isset .Params "transcript_file")}}
+            <podcast:transcript url="{{ .Permalink }}transcript.vtt" type="text/vtt" />
+            <podcast:transcript url="{{ .Permalink }}transcript.txt" type="text/plain" />
+            {{ end }}
         </item>
         {{ end }}
         {{ end }}
