@@ -38,6 +38,8 @@
             <link>{{ .Site.BaseURL }}</link>
         </image>
         <podcast:funding url="https://patreon.com/thspod">Become a patron!</podcast:funding>
+        <podcast:guid>daf9eb0a-c856-55e5-b4ac-80eb9a027100</podcast:guid>
+        <podcast:locked>no</podcast:locked>
         <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml" />
         {{ range .Site.RegularPages }}
         {{ if eq .Type "episode"}}
