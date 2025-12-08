@@ -1,9 +1,17 @@
 {{ define "main" -}}
 <ul class="posts">
-{{ range where .Site.RegularPages "Type" "=" "episode" -}}
+  {{ range where .Site.RegularPages "Type" "=" "episode" -}}
   <li>
-    <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
+    <span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ if isset .Params "tags" }}<span class="tags"
+        >[{{ delimit .Params.tags ", " }}]</span
+      >{{ end }}
+      <time class="pull-right post-list"
+        >{{ .Date.Format "Mon, Jan 2, 2006" }}</time
+      >
+    </span>
   </li>
-{{- end }}
+  {{- end }}
 </ul>
 {{- end }}
