@@ -1,0 +1,10 @@
+{{ define "main" -}}
+<div class="post">
+  <h1>{{ .Title }}</h1>
+  <div class="search-page">
+    <input id="site-search" type="search" placeholder="Search episodes..." />
+    <div id="search-results" class="posts"></div>
+  </div>
+</div>
+<script src="/js/search-page.js"></script>
+{{- end }}

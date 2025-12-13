@@ -165,6 +165,17 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+/* Search */
+.search-page input[type="search"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  margin: 1rem 0;
+}
+
 /* Sticky sidebar
   *
   * Add the `sidebar-sticky` class to the sidebar's container to affix it the
