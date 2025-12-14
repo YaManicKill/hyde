@@ -2,29 +2,37 @@
 below.
 
 <div class="feed-icons">
-  {{ if isset .Site.Params "itunes"}}
-  <a href="{{ .Site.Params.itunes }}"
-    ><img src="/images/icons/itunes.png" class="podcast-icon"
+  {{ if isset .Site.Params "applepodcasts"}}
+  <a href="{{ .Site.Params.applepodcasts }}" title="Apple Podcasts"
+    ><img src="/images/icons/applepodcasts.png" class="podcast-icon"
+  /></a>
+  {{ end }} {{ if isset .Site.Params "youtubemusic"}}
+  <a href="{{ .Site.Params.youtubemusic }}" title="YouTube Music"
+    ><img src="/images/icons/youtubemusic.svg" class="podcast-icon"
   /></a>
   {{ end }} {{ if isset .Site.Params "pocketcasts"}}
-  <a href="{{ .Site.Params.pocketcasts }}"
+  <a href="{{ .Site.Params.pocketcasts }}" title="Pocket Casts"
     ><img src="/images/icons/pocketcasts.svg" class="podcast-icon"
   /></a>
   {{ end }} {{ if isset .Site.Params "overcast"}}
-  <a href="{{ .Site.Params.overcast }}"
+  <a href="{{ .Site.Params.overcast }}" title="Overcast"
     ><img src="/images/icons/overcast.svg" class="podcast-icon overcast"
   /></a>
+  {{ end }} {{ if isset .Site.Params "podchaser"}}
+  <a href="{{ .Site.Params.podchaser }}" title="Podchaser"
+    ><img src="/images/icons/podchaser.webp" class="podcast-icon"
+  /></a>
   {{ end }} {{ if isset .Site.Params "spotify"}}
-  <a href="{{ .Site.Params.spotify }}"
+  <a href="{{ .Site.Params.spotify }}" title="Spotify"
     ><img src="/images/icons/spotify.png" class="podcast-icon"
   /></a>
   {{ end }} {{ if isset .Site.Params "youtube"}}
-  <a href="{{ .Site.Params.youtube }}"
+  <a href="{{ .Site.Params.youtube }}" title="YouTube"
     ><img src="/images/icons/youtube.png" class="podcast-icon"
   /></a>
   {{ end }}
 
-  <a href="/index.xml"
+  <a href="/index.xml" title="RSS Feed"
     ><img src="/images/icons/rss.png" class="podcast-icon"
   /></a>
 </div>
