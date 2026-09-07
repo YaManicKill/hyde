@@ -6,7 +6,7 @@
         <title>{{ .Site.Title }}</title>
         <itunes:title>{{ .Site.Title }}</itunes:title>
         <link>{{ .Permalink }}</link>
-        <language>en-us</language>
+        <language>{{ .Site.LanguageCode }}</language>
         <copyright>Copyright {{ now.Year }} {{ .Site.Params.author }}</copyright>
         <itunes:subtitle>{{ .Site.Params.description }}</itunes:subtitle>
         <itunes:author>{{ .Site.Params.author }}</itunes:author>
