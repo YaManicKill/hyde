@@ -35,7 +35,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- RSS -->
-  <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ with .Site.Home.OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
   <!-- Twitter -->
   {{ partial "twitter-card" . }}
