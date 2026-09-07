@@ -72,15 +72,12 @@
             <itunes:duration>{{ .Params.podcast_duration}}</itunes:duration>
 
 
-            {{ if (isset .Params "transcript_files")}}
-            {{ if (isset .Params "transcript_vtt")}}
-                {{ if not (eq .Params.transcript_vtt false)}}
-            <podcast:transcript url="{{ .Permalink }}transcript.vtt" type="text/vtt" />
-                {{ end }}
-            {{ else }}
-            <podcast:transcript url="{{ .Permalink }}transcript.vtt" type="text/vtt" />
+            {{/* Advertise only the transcript files that exist in the episode bundle, so the feed never points at a 404. */}}
+            {{ with .Resources.GetMatch "transcript.vtt" }}
+            <podcast:transcript url="{{ .Permalink }}" type="text/vtt" />
             {{ end }}
-            <podcast:transcript url="{{ .Permalink }}transcript.txt" type="text/plain" />
+            {{ with .Resources.GetMatch "transcript.txt" }}
+            <podcast:transcript url="{{ .Permalink }}" type="text/plain" />
             {{ end }}
         </item>
         {{ end }}

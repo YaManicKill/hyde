@@ -20,6 +20,15 @@
     {{ .Description }}
   </p>
   {{ .Content }}
+  {{/* Newer episodes keep the transcript as a bundle resource rather than in the page body, so it is
+       rendered here for the web but never reaches the RSS item description, which is built from .Content. */}}
+  {{ with .Resources.GetMatch "transcript.md" }}
+  <h1 id="transcript">Transcript</h1>
+  {{ .Content }}
+  {{ else with .Resources.GetMatch "transcript.txt" }}
+  <h1 id="transcript">Transcript</h1>
+  {{ .Content | markdownify }}
+  {{ end }}
 </div>
 
 {{ if .Site.Config.Services.Disqus.Shortname -}}
