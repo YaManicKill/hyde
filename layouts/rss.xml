@@ -46,8 +46,11 @@
         <item>
             <title>{{ title .Title }}</title>
             <itunes:title>{{ title .Title }}</itunes:title>
+            {{/* Apple requires episode numbers to be 1 or higher, so a trailer carries no episode number and becomes a season trailer. */}}
+            {{ if not (eq (.Params.episode_type | default "full") "trailer") }}
             <podcast:episode display="{{ .Params.seasonName }} {{ .Params.episode }}">{{ .Params.episode }}</podcast:episode>
             <itunes:episode>{{ .Params.episode }}</itunes:episode>
+            {{ end }}
             
             {{ if (isset .Params "season")}}
             <podcast:season name="{{ .Params.seasonName }}, Year {{ .Params.year }}">{{ .Params.season }}</podcast:season>
