@@ -66,6 +66,8 @@
             {{ end }}
             
             <itunes:author>{{ .Site.Params.author }}</itunes:author>
+            {{/* Episodes are kept clean by design, so the flag defaults to false unless an episode says otherwise. */}}
+            <itunes:explicit>{{ .Params.explicit | default false }}</itunes:explicit>
             {{/* Older episodes carry the transcript in the page body, which never belongs in the feed.
                  Apple strips heading tags from show notes, so section headings become bold paragraphs. */}}
             {{ $notes := .Content | replaceRE `(?s:<h1 id="transcript">Transcript</h1>.*)` "" | replaceRE `<h[2-6][^>]*>(.*?)</h[2-6]>` "<p><strong>$1</strong></p>" }}
