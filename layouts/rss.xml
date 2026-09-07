@@ -1,6 +1,7 @@
 <rss version="2.0"
     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-    xmlns:atom="http://www.w3.org/2005/Atom" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
     xmlns:podcast="https://podcastindex.org/namespace/1.0" >
     <channel>
         <title>{{ .Site.Title }}</title>
@@ -66,7 +67,13 @@
             {{/* Older episodes carry the transcript in the page body, which never belongs in the feed.
                  Apple strips heading tags from show notes, so section headings become bold paragraphs. */}}
             {{ $notes := .Content | replaceRE `(?s:<h1 id="transcript">Transcript</h1>.*)` "" | replaceRE `<h[2-6][^>]*>(.*?)</h[2-6]>` "<p><strong>$1</strong></p>" }}
-            <description>{{ .Params.Description }} {{ replace $notes "'" "&#39;" }}</description>
+            {{/* Apps that understand content:encoded show the HTML notes from there and treat description as a
+                 plain summary, so description carries text only and stays well inside Apple's length limit. */}}
+            <description>{{ .Params.Description }}
+
+{{ $notes | plainify | htmlUnescape }}</description>
+            <content:encoded>{{ "<![CDATA[" | safeHTML }}<p>{{ .Params.Description | safeHTML }}</p>
+{{ $notes | safeHTML }}{{ "]]>" | safeHTML }}</content:encoded>
             <itunes:summary>{{ .Params.Description }}</itunes:summary>
             <enclosure url="https://r.zencastr.com/r/dts.podtrac.com/redirect.mp3/ymk.nyc3.digitaloceanspaces.com/{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/mpeg" />
             <guid isPermaLink="false">{{ .Params.guid }}</guid>
