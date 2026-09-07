@@ -71,7 +71,7 @@
                  plain summary, so description carries text only and stays well inside Apple's length limit. */}}
             <description>{{ .Params.Description }}
 
-{{ $notes | plainify | htmlUnescape }}</description>
+{{ $notes | replaceRE `<a [^>]*href="([^"]*)"[^>]*>.*?</a>` "$1" | plainify | htmlUnescape }}</description>
             <content:encoded>{{ "<![CDATA[" | safeHTML }}<p>{{ .Params.Description | safeHTML }}</p>
 {{ $notes | safeHTML }}{{ "]]>" | safeHTML }}</content:encoded>
             <itunes:summary>{{ .Params.Description }}</itunes:summary>
