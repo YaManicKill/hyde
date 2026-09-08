@@ -93,6 +93,11 @@
             {{ with .Resources.GetMatch "transcript.txt" }}
             <podcast:transcript url="{{ .Permalink }}" type="text/plain" />
             {{ end }}
+            {{/* Tappable chapter markers in apps that speak the podcast namespace;
+                 only episodes whose bundle carries the file advertise it. */}}
+            {{ with .Resources.GetMatch "chapters.json" }}
+            <podcast:chapters url="{{ .Permalink }}" type="application/json+chapters" />
+            {{ end }}
         </item>
         {{ end }}
         {{ end }}
