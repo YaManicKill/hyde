@@ -16,6 +16,7 @@
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
   {{- end }}
   <meta name="description" content="{{ .Site.Params.Description }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
